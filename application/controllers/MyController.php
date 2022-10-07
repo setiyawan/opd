@@ -33,9 +33,10 @@ class My_Controller extends CI_Controller {
 
         $this->load->model('constant/TimeConstant'); 
         $this->load->model('constant/UserConstant');
-        $this->load->model('constant/PegawaiConstant');
+        $this->load->model('constant/PengajuanConstant');
 
-        $this->load->model('PegawaiModel');
+        $this->load->model('OpdModel');
+        $this->load->model('PengajuanModel');
         $this->load->model('DashboardModel');
 
         ini_set('display_error','off');
@@ -105,7 +106,6 @@ class My_Controller extends CI_Controller {
 		$this->upload->initialize($config);
 	    if(!$this->upload->do_upload($file)){
 	        $up_data = $this->upload->display_errors();
-	        var_dump($up_data);
 	        return '';
 	    }else{
 	        $up_data = $this->upload->data();

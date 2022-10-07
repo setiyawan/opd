@@ -4,7 +4,10 @@
       <a class="nav-link active active text-white" href="<?=base_url()?>dashboard"><i class="fas fa-tachometer-alt mr-2"></i>Dashboard</a><hr class="bg-secondary">
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="<?=base_url()?>pegawai"><i class="fas fa-user mr-2"></i>Pegawai</a><hr class="bg-secondary">
+      <a class="nav-link text-white" href="<?=base_url()?>opd"><i class="fa fa-group mr-2"></i>Daftar OPD</a><hr class="bg-secondary">
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="<?=base_url()?>pengajuan"><i class="fa fa-book mr-2"></i>Pengajuan RAPD</a><hr class="bg-secondary">
     </li>
     <li class="nav-item">
       <a class="nav-link text-white" href="<?=base_url()?>user/ganti_password"><i class="fas fa-lock mr-2"></i>Ganti Password</a><hr class="bg-secondary">

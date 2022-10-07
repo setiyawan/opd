@@ -30,21 +30,14 @@ class Dashboard extends My_Controller {
     }
     
     public function index() {
-    	$filter['kgb2bln'] = true;
-    	$filter1['kp1thn'] = true;
-    	
-    	$filter2['berkas_url'] = 1;
-    	$filter2 = array_merge($filter1, $filter2);
-
-    	$filter3['status'] = 1;
-    	$filter3 = array_merge($filter2, $filter3);    	
+    	$filter1['tahun_anggaran'] = $this->TimeConstant->get_current_year();
+    	$filter2['status'] = 1;    	
+    	$filter3['status'] = 0;    	
 
     	$data = array(
-    		'total_pegawai' => $this->DashboardModel->total_pegawai(),
-            'total_kgb' => $this->DashboardModel->total_pegawai($filter),
-    		'total_kp' => $this->DashboardModel->total_pegawai($filter1),
-    		'total_berkas' => $this->DashboardModel->total_pegawai($filter2),
-    		'total_terverifikasi' => $this->DashboardModel->total_pegawai($filter3),
+    		'jumlah_opd' => $this->DashboardModel->total_pengajuan_opd($filter1),
+    		'jumlah_acc' => $this->DashboardModel->total_pengajuan_opd($filter2),
+    		'jumlah_blm_bahas' => $this->DashboardModel->total_pengajuan_opd($filter3),
     	);
 
 		$this->load->view('dashboard', $data);

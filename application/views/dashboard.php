@@ -8,46 +8,37 @@
         <h3><i class="fas fa-tachometer-alt mr-2"></i> Dashboard</h3><hr>
 
         <div class="row text-white">
-          <div class="card bg-info ml-5" style="width: 15rem;">
+          <div class="card bg-secondary ml-5" style="width: 15rem;">
               <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-user mr-2"></i>Total Pegawai</h5>
-              <div class="display-4"><?= $total_pegawai ?></div>
-              <a href="<?=base_url()?>pegawai"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
+              <h5 class="card-title"><i class="fas fa-calendar mr-2"></i>Tahun Anggaran</h5>
+              <div class="display-4"><?= $this->TimeConstant->get_current_year(); ?></div>
           </div>
         </div>
 
-          <div class="card bg-success ml-5" style="width: 17rem;">
+          <div class="card bg-info ml-5" style="width: 17rem;">
               <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-calendar mr-2"></i>KGB 2 Bulan Kedepan</h5>
-              <div class="display-4"><?= $total_kgb ?></div>
-              <a href="<?=base_url()?>pegawai?filter=kgb2bln"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
+              <h5 class="card-title"><i class="fas fa-users mr-2"></i>Jumlah Usulan OPD</h5>
+              <div class="display-4"><?= $jumlah_opd ?></div>
+              <a href="<?=base_url()?>pengajuan?filter=thn-anggaran"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
           </div>
         </div>
 
-        <div class="card bg-secondary ml-5" style="width: 17rem;">
+        <div class="card bg-success ml-5" style="width: 17rem;">
               <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-calendar mr-2"></i>KP 1 Tahun Kedepan</h5>
-              <div class="display-4"><?= $total_kp ?></div>
-              <a href="<?=base_url()?>pegawai?filter=kp1thn"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
+              <h5 class="card-title"><i class="fas fa-check mr-2"></i>Sudah di ACC</h5>
+              <div class="display-4"><?= $jumlah_acc ?></div>
+              <a href="<?=base_url()?>pengajuan?filter=thn-anggaran-acc"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
           </div>
         </div>
 
-        <div class="card bg-secondary ml-5" style="width: 13rem;">
+        <div class="card bg-danger ml-5" style="width: 17rem;">
               <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-upload mr-2"></i>Upload Berkas</h5>
-              <div class="display-4"><?= $total_berkas ?></div>
-              <a href="<?=base_url()?>pegawai?filter=kp1thn&berkas=true"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
+              <h5 class="card-title"><i class="fas fa-hourglass-start mr-2"></i>Belum di Bahas</h5>
+              <div class="display-4"><?= $jumlah_blm_bahas ?></div>
+              <a href="<?=base_url()?>pengajuan?filter=thn-anggaran-blm-bahas"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
           </div>
         </div>
-
-        <div class="card bg-secondary ml-5" style="width: 13rem;">
-              <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-check mr-2"></i>Terverifikasi</h5>
-              <div class="display-4"><?= $total_terverifikasi ?></div>
-              <a href="<?=base_url()?>pegawai?filter=kp1thn&berkas=true&verifikasi=true"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
-          </div>
-        </div>
-
+       
       </div>
     </div>
 

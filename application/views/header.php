@@ -13,12 +13,12 @@
 
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url()?>asset/images/favicon.png">
 
-    <title>Sistem Kenaikan Gaji Berkala | Bappeda Kab. Madiun</title>
+    <title>Sistem Usulan Anggaran OPD | Bappeda Kab. Madiun</title>
   </head>
   <body>
     
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
       <img src="<?= base_url()?>asset/images/favicon.png" width="40px">
-      <b>Sistem Kenaikan Gaji Berkala</b>
+      <b>Sistem Usulan Anggaran OPD</b>
     </nav>
