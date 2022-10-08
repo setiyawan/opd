@@ -20,9 +20,6 @@
               <a class="nav-link active" data-toggle="tab" href="#umum" role="tab" aria-controls="umum">Pengajuan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#kgb" role="tab" aria-controls="kgb">Keterangan & Hasil Rapat</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#kp" role="tab" aria-controls="kp">Keputusan</a>
             </li>
           </ul>
@@ -49,8 +46,14 @@
                     <input type="file" name="file_surat" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['file_surat'])?>">
                   </div>
                   <div class="form-group">
-                    <label>Dasar Hukum</label>
-                    <input type="text" name="dasar_hukum" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['dasar_hukum'])?>" required>
+                    <label>Tanggal Surat</label>
+                    <input type="date" name="tgl_surat" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['tgl_surat'])?>" required>
+                  </div>
+                  <div class="form-group">
+                     <div class="form-group">
+                        <label>Keterangan Surat</label>
+                        <textarea class="form-control" required rows="5" name="keterangan_surat"><?= $this->Ternary->isset_value($pengajuan['keterangan_surat'])?></textarea>
+                      </div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -69,6 +72,10 @@
                         <option value="<?=$key?>" <?= $this->Ternary->istrue_value($pengajuan['perubahan_ke'] == $key, 'selected')?> > <?=$value?> </option>
                       <?php } ?>
                     </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Dasar Hukum</label>
+                    <input type="text" name="dasar_hukum" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['dasar_hukum'])?>" required>
                   </div>
                   <div class="form-group">
                     <label>Sumber Dana</label>
@@ -90,17 +97,15 @@
               </div>
             </div>
 
-            <div class="tab-pane" id="kgb" role="tabpanel">
+            <div class="tab-pane" id="kp" role="tabpanel">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                     <div class="form-group">
-                        <label>Keterangan Surat</label>
-                        <textarea class="form-control" rows="4" name="keterangan_surat"><?= $this->Ternary->isset_value($pengajuan['keterangan_surat'])?></textarea>
-                      </div>
+                    <div class="form-group">
+                      <label>Tanggal Rapat</label>
+                      <input type="date" name="tgl_rapat" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['tgl_rapat'])?>">
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-6">
                   <div class="form-group">
                       <div class="form-group">
                         <label>Keputusan Rapat</label>
@@ -108,11 +113,6 @@
                       </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="tab-pane" id="kp" role="tabpanel">
-              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                    <div class="form-group">
@@ -127,14 +127,6 @@
                         <option value="<?=$key?>" <?= $this->Ternary->istrue_value($pengajuan['status'] == $key, 'selected')?> > <?=$value?> </option>
                       <?php } ?>
                     </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <div class="form-group">
-                      <label>Tanggal Rapat</label>
-                      <input type="date" name="tgl_rapat" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['tgl_rapat'])?>">
-                    </div>
                   </div>
                 </div>
               </div>

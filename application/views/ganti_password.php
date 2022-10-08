@@ -30,14 +30,14 @@
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url()?>asset/images/favicon.png">
 
-    <title>Sistem Usulan Anggaran OPD | Bappeda Kab. Madiun</title>
+    <title>SI RATU (Sistem Informasi Rekapitulasi Usulan Kegiatan / Belanja OPD) | Bidang Anggaran BPKAD Kab. Madiun</title>
   </head>
   <body>
     
     <div class="container text-center">
       <img src="<?= base_url()?>/asset/images/favicon.png" width="70px" height="85px" >
-      <h6 class="text-center mt-3">Sistem Usulan Anggaran OPD</h6>
-      <h6 class="text-center">Bappeda Kab. Madiun</h6><hr>
+      <h6 class="text-center mt-3">SI RATU (Sistem Informasi Rekapitulasi Usulan Kegiatan / Belanja OPD)</h6>
+      <h6 class="text-center">Bidang Anggaran BPKAD Kab. Madiun</h6><hr>
 
       <form method="post" action="<?= base_url()?>user/do_update_password">
         <div class="form-group text-left">

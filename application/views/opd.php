@@ -29,7 +29,7 @@
                 <td> <?= $value['email'] ?> </td>
                 <td> <?= $value['alamat'] ?> </td>
                 <td>
-                  <a class="btn btn-secondary bg-success" href="<?= base_url()?>opd/edit?id=<?= $value['id_opd']?>">Edit Profil</a>
+                  <a class="btn btn-secondary bg-success" href="<?= base_url()?>opd/edit?id=<?= $value['id_opd']?>">Edit</a>
                 </td>
               </tr>
               <?php } ?>

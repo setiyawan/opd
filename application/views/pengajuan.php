@@ -5,7 +5,7 @@
       <?php $this->view('left_navbar'); ?>
 
       <div class="col-md-10 p-5 pt-2">
-        <h5><i class="fas fa-user mr-2"></i>DAFTAR PENGAJUAN RAPD OPD</h5><hr>
+        <h5><i class="fas fa-user mr-2"></i>PENGAJUAN BELANJA / KEGIATAN</h5><hr>
 
           <a href="<?=base_url()?>pengajuan/tambah" class=" btn btn-primary mb-3"><i class="fas fa-plus-circle mr-3"></i>Tambah Pengajuan</a>
           <table class="table table-hover table-striped table-bordered myTable">
@@ -15,6 +15,7 @@
                 <th scope="col">Nama OPD</th>
                 <th scope="col">Th. Anggaran</th>
                 <th scope="col">Perubahan Ke-</th>
+                <th scope="col">Tgl Surat</th>
                 <th scope="col">APBD</th>
                 <th scope="col">RAPBD</th>
                 <th scope="col">ACC</th>
@@ -30,6 +31,7 @@
                 <td> <?= $value['nama']?> </td>
                 <td> <?= $value['tahun_anggaran'] ?> </td>
                 <td> <?= $value['perubahan_ke'] ?> </td>
+                <td> <?= $value['tgl_surat'] ?> </td>
                 <td> <?= $this->Converter->to_rupiah($value['anggaran_apbd']) ?> </td>
                 <td> <?= $this->Converter->to_rupiah($value['anggaran_rapbd']) ?> </td>
                 <td> <?= $this->Converter->to_rupiah($value['anggaran_acc']) ?> </td>

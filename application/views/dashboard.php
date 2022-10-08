@@ -15,15 +15,15 @@
           </div>
         </div>
 
-          <div class="card bg-info ml-5" style="width: 17rem;">
+          <div class="card bg-info ml-5" style="width: 15rem;">
               <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-users mr-2"></i>Jumlah Usulan OPD</h5>
+              <h5 class="card-title"><i class="fas fa-users mr-2"></i>Usulan OPD</h5>
               <div class="display-4"><?= $jumlah_opd ?></div>
               <a href="<?=base_url()?>pengajuan?filter=thn-anggaran"><p class="card-text text-white">Lihat Detail <i class="fas fa-angle-double-right ml-2"></i></p></a>
           </div>
         </div>
 
-        <div class="card bg-success ml-5" style="width: 17rem;">
+        <div class="card bg-success ml-5" style="width: 15rem;">
               <div class="card-body">
               <h5 class="card-title"><i class="fas fa-check mr-2"></i>Sudah di ACC</h5>
               <div class="display-4"><?= $jumlah_acc ?></div>
@@ -31,7 +31,7 @@
           </div>
         </div>
 
-        <div class="card bg-danger ml-5" style="width: 17rem;">
+        <div class="card bg-danger ml-5" style="width: 15rem;">
               <div class="card-body">
               <h5 class="card-title"><i class="fas fa-hourglass-start mr-2"></i>Belum di Bahas</h5>
               <div class="display-4"><?= $jumlah_blm_bahas ?></div>

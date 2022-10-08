@@ -67,6 +67,7 @@ class Pengajuan extends My_Controller {
 		$data['tahun_anggaran'] = $post['tahun_anggaran'];
 		$data['perubahan_ke'] = $post['perubahan_ke'];
 		$data['nomor_surat_opd'] = $post['nomor_surat_opd'];
+		$data['tgl_surat'] = $post['tgl_surat'];
 		$data['file_surat'] = $post['file_surat'];
 		$data['sumber_dana'] = $post['sumber_dana'];
 		$data['dasar_hukum'] = $post['dasar_hukum'];
@@ -97,6 +98,7 @@ class Pengajuan extends My_Controller {
 		$data['tahun_anggaran'] = $post['tahun_anggaran'];
 		$data['perubahan_ke'] = $post['perubahan_ke'];
 		$data['nomor_surat_opd'] = $post['nomor_surat_opd'];
+		$data['tgl_surat'] = $post['tgl_surat'];
 		$data['file_surat'] = $post['file_surat'];
 		$data['sumber_dana'] = $post['sumber_dana'];
 		$data['dasar_hukum'] = $post['dasar_hukum'];
