@@ -31,10 +31,11 @@ class Opd extends My_Controller {
     
     public function index() {
     	$get = $this->input->get();
+    	$filter['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 
     	$data['opd'] = $this->OpdModel->get_opd($filter);
 		
-		$this->load->view('opd', $data);
+		$this->load->view('opd2', $data);
 	}
 
 	public function tambah() {
@@ -42,7 +43,7 @@ class Opd extends My_Controller {
 			'form_action' => 'add'
 		);
 
-		$this->load->view('opd_form', $data);
+		$this->load->view('opd_form2', $data);
 	}
 
 	public function edit() {
@@ -54,18 +55,17 @@ class Opd extends My_Controller {
 			'opd' =>  $this->OpdModel->get_opd($filter)[0]
 		);
 
-		$this->load->view('opd_form', $data);
+		$this->load->view('opd_form2', $data);
 	}
 
 	// POST TRANSACTION
 	public function add() {
 		$post = $this->input->post();
 
-		$data['nama'] = $post['nama'];
-		$data['hp'] = $post['hp'];
-		$data['email'] = $post['email'];
-		$data['alamat'] = $post['alamat'];
-		$data['status'] = 1;
+		$data['nama_skpd'] = $post['nama_skpd'];
+		$data['status'] = $post['status'];
+		$data['namakepala'] = $post['namakepala'];
+		$data['pangkatkepala'] = $post['pangkatkepala'];
 
 		$result = $this->OpdModel->add_data_opd($data);
 		$opd['id_opd'] = $this->db->insert_id();
@@ -79,11 +79,11 @@ class Opd extends My_Controller {
 		$post = $this->input->post();
 		$id_opd = $post['id_opd'];
 
-		$data['nama'] = $post['nama'];
-		$data['hp'] = $post['hp'];
-		$data['email'] = $post['email'];
-		$data['alamat'] = $post['alamat'];
-		$data['update_time'] = $this->TimeConstant->get_current_timestamp();
+		$data['nama_skpd'] = $post['nama_skpd'];
+		$data['status'] = $post['status'];
+		$data['namakepala'] = $post['namakepala'];
+		$data['pangkatkepala'] = $post['pangkatkepala'];
+		$data['update_at'] = $this->TimeConstant->get_current_timestamp();
 
 		$this->OpdModel->update_data_opd($data, $id_opd);
 

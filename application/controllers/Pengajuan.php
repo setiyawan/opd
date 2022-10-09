@@ -31,10 +31,11 @@ class Pengajuan extends My_Controller {
     
     public function index() {
     	$get = $this->input->get();
+		$filter['status'] = $get['status'];
 
     	$data['pengajuan'] = $this->PengajuanModel->get_pengajuan_opd($filter);
 		
-		$this->load->view('pengajuan', $data);
+		$this->load->view('pengajuan2', $data);
 	}
 
 	public function tambah() {
@@ -43,7 +44,7 @@ class Pengajuan extends My_Controller {
 		);
 		$data['opd'] = $this->OpdModel->get_opd();
 
-		$this->load->view('pengajuan_form', $data);
+		$this->load->view('pengajuan_form2', $data);
 	}
 
 	public function edit() {
@@ -54,9 +55,11 @@ class Pengajuan extends My_Controller {
 			'form_action' => 'update',
 			'pengajuan' =>  $this->PengajuanModel->get_pengajuan_opd($filter)[0]
 		);
-		$data['opd'] = $this->OpdModel->get_opd();
 
-		$this->load->view('pengajuan_form', $data);
+		$filter2['tahun_anggaran'] = $get['tahun_anggaran'];
+		$data['opd'] = $this->OpdModel->get_opd($filter2);
+
+		$this->load->view('pengajuan_form2', $data);
 	}
 
 	// POST TRANSACTION
@@ -99,7 +102,6 @@ class Pengajuan extends My_Controller {
 		$data['perubahan_ke'] = $post['perubahan_ke'];
 		$data['nomor_surat_opd'] = $post['nomor_surat_opd'];
 		$data['tgl_surat'] = $post['tgl_surat'];
-		$data['file_surat'] = $post['file_surat'];
 		$data['sumber_dana'] = $post['sumber_dana'];
 		$data['dasar_hukum'] = $post['dasar_hukum'];
 		$data['anggaran_apbd'] = $post['anggaran_apbd'];
@@ -112,7 +114,9 @@ class Pengajuan extends My_Controller {
 		$data['update_time'] = $this->TimeConstant->get_current_timestamp();
 
 		$file_surat = $this->upload_image('file_surat', 'berkas', $data['nomor_surat_opd'] . '_' . $post['file_surat']);
-        $data['file_surat'] = $file_surat;
+        if($file_surat != "") {
+	        $data['file_surat'] = $file_surat;
+        }
 
 		$this->PengajuanModel->update_data_pengajuan_opd($data, $id_pengajuan_opd);
 

@@ -31,7 +31,7 @@ class Dashboard extends My_Controller {
     
     public function index() {
     	$filter1['tahun_anggaran'] = $this->TimeConstant->get_current_year();
-    	$filter2['status'] = 1;    	
+    	$filter2['status'] = 1;  	
     	$filter3['status'] = 0;    	
 
     	$data = array(
@@ -40,6 +40,6 @@ class Dashboard extends My_Controller {
     		'jumlah_blm_bahas' => $this->DashboardModel->total_pengajuan_opd($filter3),
     	);
 
-		$this->load->view('dashboard', $data);
+		$this->load->view('dashboard2', $data);
 	}
 }

@@ -3,12 +3,20 @@
 class PengajuanModel extends CI_Model {
     
     public function get_pengajuan_opd($filter=[]) {
-         if (!empty($filter['id_pengajuan_opd'])) {
+        if (!empty($filter['id_pengajuan_opd'])) {
             $this->db->where('p.id_pengajuan_opd', $filter['id_pengajuan_opd']);
         }
 
-        $this->db->select('p.*, o.nama');
-        $this->db->join('opd o', 'o.id_opd = p.id_opd', 'left');
+        if (isset($filter['status'])) {
+            $this->db->where('p.status', $filter['status']);
+        }
+
+        if (!empty($filter['tahun_anggaran'])) {
+            $this->db->where('o.tahun_anggaran', $filter['tahun_anggaran']);
+        }
+
+        $this->db->select('p.*, o.nama_skpd');
+        $this->db->join('data_unit o', 'o.id = p.id_opd', 'left');
 
         return  $this->db->get('pengajuan_opd p')->result_array();
         // print_r($this->db->last_query());

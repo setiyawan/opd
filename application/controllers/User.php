@@ -52,13 +52,13 @@ class User extends My_Controller {
 			redirect(base_url().'dashboard');
 		}
 
-		$this->load->view('login');
+		$this->load->view('login2');
 	}
 
 	public function ganti_password() {
 		$this->must_login();
 
-		$this->load->view('ganti_password');
+		$this->load->view('ganti_password2');
 	}
 	
 	// POST TRANSACTION
@@ -92,7 +92,7 @@ class User extends My_Controller {
 		$result = $this->UserModel->login($username , $old_password);
 		if (count($result) == 0) {
 			$this->set_alert('danger', 'Password Lama yang kamu masukkan salah. Periksa kembali ya.');
-			redirect(base_url().'user/ganti_password');
+			redirect(base_url().'user/ganti_password2');
 		}
 
 		if($new_password == $confirm_password) {
@@ -101,7 +101,7 @@ class User extends My_Controller {
 			$this->UserModel->update_password($user_id, $data);	
 		} else {
 			$this->set_alert('warning', 'Password Baru yang kamu masukkan tidak sama. Periksa kembali ya.');
-			redirect(base_url().'user/ganti_password');
+			redirect(base_url().'user/ganti_password2');
 		}
 
 		$this->logout();
