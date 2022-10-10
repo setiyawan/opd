@@ -32,6 +32,7 @@ class Opd extends My_Controller {
     public function index() {
     	$get = $this->input->get();
     	$filter['tahun_anggaran'] = $this->TimeConstant->get_current_year();
+    	$filter['id_opd'] = $this->get_session_by_id('id_opd');
 
     	$data['opd'] = $this->OpdModel->get_opd($filter);
 		

@@ -40,6 +40,7 @@ class User extends My_Controller {
 			'gender'    => $data['gender'],
 			'username'  => $data['username'], 
 			'full_name' => $data['full_name'], 
+			'id_opd' 	=> $data['id_opd'], 
 			'logged_in' => TRUE
 		);  
 

@@ -31,7 +31,9 @@ class Pengajuan extends My_Controller {
     
     public function index() {
     	$get = $this->input->get();
+    	$filter['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 		$filter['status'] = $get['status'];
+    	$filter['id_opd'] = $this->get_session_by_id('id_opd');
 
     	$data['pengajuan'] = $this->PengajuanModel->get_pengajuan_opd($filter);
 		
@@ -41,9 +43,17 @@ class Pengajuan extends My_Controller {
 
 	public function tambah() {
 		$data = array(
-			'form_action' => 'add'
+			'form_action' => 'add',
+			'class' => ''
 		);
-		$data['opd'] = $this->OpdModel->get_opd();
+    	$filter2['id_opd'] = $this->get_session_by_id('id_opd');
+		$filter2['tahun_anggaran'] = $this->TimeConstant->get_current_year();
+
+		$data['opd'] = $this->OpdModel->get_opd($filter2);
+
+		if ($filter2['id_opd'] > 0) {
+			$data['class'] = 'force-hidden';
+		}
 
 		$this->load->view('pengajuan_form2', $data);
 	}
@@ -54,11 +64,17 @@ class Pengajuan extends My_Controller {
 
     	$data = array(
 			'form_action' => 'update',
+			'class' => '',
 			'pengajuan' =>  $this->PengajuanModel->get_pengajuan_opd($filter)[0]
 		);
 
-		$filter2['tahun_anggaran'] = $get['tahun_anggaran'];
+    	$filter2['id_opd'] = $this->get_session_by_id('id_opd');
+		$filter2['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 		$data['opd'] = $this->OpdModel->get_opd($filter2);
+
+		if ($filter2['id_opd'] > 0) {
+			$data['class'] = 'force-hidden';
+		}
 
 		$this->load->view('pengajuan_form2', $data);
 	}

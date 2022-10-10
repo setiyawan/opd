@@ -15,6 +15,14 @@ class PengajuanModel extends CI_Model {
             $this->db->where('o.tahun_anggaran', $filter['tahun_anggaran']);
         }
 
+        if (!empty($filter['id_opd']) && $filter['id_opd'] > 0) {
+            $this->db->where('p.id_opd', $filter['id_opd']);
+        }
+
+        if (!empty($filter['tahun_anggaran'])) {
+            $this->db->where('o.tahun_anggaran', $filter['tahun_anggaran']);
+        }
+
         $this->db->select('p.*, o.nama_skpd');
         $this->db->join('data_unit o', 'o.id = p.id_opd', 'left');
 

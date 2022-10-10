@@ -49,7 +49,7 @@
                             Pengajuan
                           </button>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?= $class ?>">
                           <button
                             type="button"
                             class="nav-link"

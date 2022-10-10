@@ -52,12 +52,12 @@
                   <table class="table table-borderless myTable">
                     <thead class="bg-dark">
                       <tr>
-                        <th>#</th>
-                        <th>Nama SKPD</th>
-                        <th>Status</th>
-                        <th>Nama Kepala</th>
-                        <th>Pangkat Kepala</th>
-                        <th>Aksi</th>
+                        <th style="color: white;">#</th>
+                        <th style="color: white;">Nama SKPD</th>
+                        <th style="color: white;">Status</th>
+                        <th style="color: white;">Nama Kepala</th>
+                        <th style="color: white;">Pangkat Kepala</th>
+                        <th style="color: white;">Aksi</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">

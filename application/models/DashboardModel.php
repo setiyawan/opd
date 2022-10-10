@@ -11,6 +11,10 @@ class DashboardModel extends CI_Model {
             $this->db->where('tahun_anggaran', $filter['tahun_anggaran']);
         }
 
+        if (!empty($filter['id_opd']) && $filter['id_opd'] > 0) {
+            $this->db->where('id_opd', $filter['id_opd']);
+        }
+
         return $this->db->count_all_results('pengajuan_opd');
     }
 

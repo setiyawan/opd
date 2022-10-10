@@ -3,7 +3,7 @@
 class OpdModel extends CI_Model {
     
     public function get_opd($filter=[]) {
-        if (!empty($filter['id_opd'])) {
+        if (!empty($filter['id_opd']) && $filter['id_opd'] > 0) {
             $this->db->where('id', $filter['id_opd']);
         }
 

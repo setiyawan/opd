@@ -50,16 +50,16 @@
                   <table class="table table-borderless myTable">
                     <thead class="bg-dark">
                       <tr>
-                        <th>#</th>
-                        <th>Nama OPD</th>
-                        <th>Th. Anggaran</th>
-                        <th>Fase</th>
-                        <th>Tgl Surat</th>
-                        <th>APBD</th>
-                        <th>RAPBD</th>
-                        <th>ACC</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
+                        <th style="color: white;">#</th>
+                        <th style="color: white;">Nama OPD</th>
+                        <th style="color: white;">Th. Anggaran</th>
+                        <th style="color: white;">Fase</th>
+                        <th style="color: white;">Tgl Surat</th>
+                        <th style="color: white;">APBD</th>
+                        <th style="color: white;">RAPBD</th>
+                        <th style="color: white;">ACC</th>
+                        <th style="color: white;">Status</th>
+                        <th style="color: white;">Aksi</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">

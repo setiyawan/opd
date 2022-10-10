@@ -31,8 +31,14 @@ class Dashboard extends My_Controller {
     
     public function index() {
     	$filter1['tahun_anggaran'] = $this->TimeConstant->get_current_year();
-    	$filter2['status'] = 1;  	
-    	$filter3['status'] = 0;    	
+    	$filter1['id_opd'] = $this->get_session_by_id('id_opd');
+
+    	$filter2['status'] = 1;
+    	$filter2['id_opd'] = $this->get_session_by_id('id_opd');
+
+    	$filter3['status'] = 0;
+    	$filter3['id_opd'] = $this->get_session_by_id('id_opd');
+
 
     	$data = array(
     		'jumlah_opd' => $this->DashboardModel->total_pengajuan_opd($filter1),

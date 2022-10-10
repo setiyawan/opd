@@ -1,6 +1,6 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="dashboard" class="app-brand-link">
+            <a href="<?=base_url()?>dashboard" class="app-brand-link">
               <h2 class="app-brand-text text-body fw-bolder">SI RATU</h2>
             </a>
 
