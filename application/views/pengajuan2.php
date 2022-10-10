@@ -8,6 +8,12 @@
 
         <?php $this->view('left_navbar2'); ?>
         
+        <?php
+          if(isset($_SESSION['alert'])) {
+              $alert = $this->session->flashdata('alert');
+          }
+        ?>
+
         <!-- / Menu -->
 
         <!-- Layout container -->
@@ -27,12 +33,15 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"> Daftar Pengajuan RAPBD
+              <h4 class="fw-bold py-3 mb-4"> Daftar Usulan Belanja / Kegiatan
                 <a href="<?=base_url()?>pengajuan/tambah" class="btn btn-primary btn-sm">
                   <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Tambah
                 </a>
               </h4>
-
+              <div class="alert alert-success alert-dismissible" <?= isset($alert['message']) ? "" : "hidden" ?> role="alert">
+                <?= $alert['message'] ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <br>
@@ -44,7 +53,7 @@
                         <th>#</th>
                         <th>Nama OPD</th>
                         <th>Th. Anggaran</th>
-                        <th>Perubahan Ke-</th>
+                        <th>Fase</th>
                         <th>Tgl Surat</th>
                         <th>APBD</th>
                         <th>RAPBD</th>
@@ -60,7 +69,7 @@
                         <th scope="row"> <?= $row++; ?></th>
                         <td> <?= $value['nama_skpd']?> </td>
                         <td> <?= $value['tahun_anggaran'] ?> </td>
-                        <td> <?= $value['perubahan_ke'] ?> </td>
+                        <td> <?= $this->PengajuanConstant->perubahan_ke()[$value['perubahan_ke']] ?> </td>
                         <td> <?= $this->Converter->to_indonesia_date($value['tgl_surat']) ?> </td>
                         <td> <?= $this->Converter->to_rupiah($value['anggaran_apbd']) ?> </td>
                         <td> <?= $this->Converter->to_rupiah($value['anggaran_rapbd']) ?> </td>

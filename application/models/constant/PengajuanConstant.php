@@ -9,11 +9,11 @@ class PengajuanConstant extends CI_Model {
 
 	function perubahan_ke() {
 		return array(
-			'1' => '1' ,
-			'2' => '2' ,
-			'3' => '3' ,
-			'4' => '4' ,
-			'5' => '5' 
+			'1' => 'Pergeseran-1' ,
+			'2' => 'Pergeseran-2' ,
+			'3' => 'Pergeseran-3' ,
+			'4' => 'Pergeseran-4' ,
+			'5' => 'PAK' 
 		);
 	}
 

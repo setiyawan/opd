@@ -36,6 +36,7 @@ class Opd extends My_Controller {
     	$data['opd'] = $this->OpdModel->get_opd($filter);
 		
 		$this->load->view('opd2', $data);
+		unset($_SESSION['alert']);
 	}
 
 	public function tambah() {
@@ -89,6 +90,6 @@ class Opd extends My_Controller {
 
 		$this->set_alert('success', 'Data Opd Berhasil Diperbarui');
 
-		redirect(base_url().'opd/edit?id='.$id_opd);
+		redirect(base_url().'opd/?id='.$id_opd);
 	}
 }

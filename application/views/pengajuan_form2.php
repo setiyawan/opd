@@ -27,7 +27,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4">Pengajuan Belanja / Kegiatan</h4>
+              <h4 class="fw-bold py-3 mb-4">Usulan Belanja / Kegiatan</h4>
 
               <!-- Basic Layout & Basic with Icons -->
               <div class="row">
@@ -96,9 +96,15 @@
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
+                                <label class="col-form-label" for="basic-default-name">Program/ Kegiatan</label>
+                                <div class="col-sm-10">
+                                  <textarea class="form-control" required rows="2" name="program"><?= $this->Ternary->isset_value($pengajuan['program'])?></textarea>
+                                </div>
+                              </div>
+                              <div class="form-gorup mb-3">
                                 <label class="col-form-label" for="basic-default-name">Keterangan Surat</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" required rows="5" name="keterangan_surat"><?= $this->Ternary->isset_value($pengajuan['keterangan_surat'])?></textarea>
+                                  <textarea class="form-control" required rows="4" name="keterangan_surat"><?= $this->Ternary->isset_value($pengajuan['keterangan_surat'])?></textarea>
                                 </div>
                               </div>
                             </div>
@@ -114,7 +120,7 @@
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
-                                <label class="col-form-label" for="basic-default-company">Perubahan Ke-</label>
+                                <label class="col-form-label" for="basic-default-company">Fase</label>
                                 <div class="col-sm-10">
                                   <select name="perubahan_ke" class="form-control">
                                     <?php foreach ($this->PengajuanConstant->perubahan_ke() as $key => $value) { ?>

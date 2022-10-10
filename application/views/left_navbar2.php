@@ -1,7 +1,7 @@
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="dashboard" class="app-brand-link">
-              <span class="app-brand-text demo menu-text fw-bolder ms-2">SI RATU  </span>
+              <h2 class="app-brand-text text-body fw-bolder">SI RATU</h2>
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -30,7 +30,7 @@
             <li class="menu-item">
               <a href="<?=base_url()?>pengajuan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-book"></i>
-                <div data-i18n="Tables">Pengajuan Belanja/ Kegiatan</div>
+                <div data-i18n="Tables">Usulan Belanja / Kegiatan</div>
               </a>
             </li>
 

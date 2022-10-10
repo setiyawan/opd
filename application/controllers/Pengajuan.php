@@ -36,6 +36,7 @@ class Pengajuan extends My_Controller {
     	$data['pengajuan'] = $this->PengajuanModel->get_pengajuan_opd($filter);
 		
 		$this->load->view('pengajuan2', $data);
+		unset($_SESSION['alert']);
 	}
 
 	public function tambah() {
@@ -76,6 +77,7 @@ class Pengajuan extends My_Controller {
 		$data['dasar_hukum'] = $post['dasar_hukum'];
 		$data['anggaran_apbd'] = $post['anggaran_apbd'];
 		$data['anggaran_rapbd'] = $post['anggaran_rapbd'];
+		$data['program'] = $post['program'];
 		$data['keterangan_surat'] = $post['keterangan_surat'];
 		$data['keputusan_rapat'] = $post['keputusan_rapat'];
 		$data['anggaran_acc'] = $post['anggaran_acc'];
@@ -106,6 +108,7 @@ class Pengajuan extends My_Controller {
 		$data['dasar_hukum'] = $post['dasar_hukum'];
 		$data['anggaran_apbd'] = $post['anggaran_apbd'];
 		$data['anggaran_rapbd'] = $post['anggaran_rapbd'];
+		$data['program'] = $post['program'];
 		$data['keterangan_surat'] = $post['keterangan_surat'];
 		$data['keputusan_rapat'] = $post['keputusan_rapat'];
 		$data['anggaran_acc'] = $post['anggaran_acc'];
@@ -122,6 +125,6 @@ class Pengajuan extends My_Controller {
 
 		$this->set_alert('success', 'Data Pengajuan Berhasil Diperbarui');
 
-		redirect(base_url().'pengajuan/edit?id='.$id_pengajuan_opd);
+		redirect(base_url().'pengajuan?id='.$id_pengajuan_opd);
 	}
 }

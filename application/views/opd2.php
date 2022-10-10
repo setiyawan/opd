@@ -8,6 +8,12 @@
 
         <?php $this->view('left_navbar2'); ?>
         
+        <?php
+          if(isset($_SESSION['alert'])) {
+              $alert = $this->session->flashdata('alert');
+          }
+        ?>
+        
         <!-- / Menu -->
 
         <!-- Layout container -->
@@ -32,6 +38,11 @@
                   <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Tambah
                 </a>
               </h4>
+
+              <div class="alert alert-success alert-dismissible" <?= isset($alert['message']) ? "" : "hidden" ?> role="alert">
+                <?= $alert['message'] ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
 
               <!-- Basic Bootstrap Table -->
               <div class="card">
