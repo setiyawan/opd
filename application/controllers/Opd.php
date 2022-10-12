@@ -68,13 +68,14 @@ class Opd extends My_Controller {
 		$data['status'] = $post['status'];
 		$data['namakepala'] = $post['namakepala'];
 		$data['pangkatkepala'] = $post['pangkatkepala'];
+		$data['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 
 		$result = $this->OpdModel->add_data_opd($data);
 		$opd['id_opd'] = $this->db->insert_id();
 
 		$this->set_alert('success', 'Data Opd Berhasil Ditambah');
 
-		redirect(base_url().'opd/edit?id='.$opd['id_opd']);
+		redirect(base_url().'opd?id='.$opd['id_opd']);
 	}
 
 	public function update() {
