@@ -1,3 +1,7 @@
+        <?php
+          $slug = $this->uri->segment(1);
+        ?>
+
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
             <a href="<?=base_url()?>dashboard" class="app-brand-link">
@@ -13,24 +17,31 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
-            <li class="menu-item">
+            <li class="menu-item <?= $slug == "dashboard" ? "active" : "" ?>">
               <a href="<?=base_url()?>dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?= $slug == "opd" ? "active" : "" ?>">
               <a href="<?=base_url()?>opd" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-group"></i>
                 <div data-i18n="Tables">Daftar OPD</div>
               </a>
             </li>
 
-            <li class="menu-item">
+            <li class="menu-item <?= $slug == "pengajuan" ? "active" : "" ?>">
               <a href="<?=base_url()?>pengajuan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-book"></i>
                 <div data-i18n="Tables">Usulan Belanja / Kegiatan</div>
+              </a>
+            </li>
+
+            <li class="menu-item <?= $slug == "laporan" ? "active" : "" ?>">
+              <a href="<?=base_url()?>laporan" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-printer"></i>
+                <div data-i18n="Tables">Cetak Laporan</div>
               </a>
             </li>
 

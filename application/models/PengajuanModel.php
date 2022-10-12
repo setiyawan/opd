@@ -7,12 +7,16 @@ class PengajuanModel extends CI_Model {
             $this->db->where('p.id_pengajuan_opd', $filter['id_pengajuan_opd']);
         }
 
-        if (isset($filter['status'])) {
+        if (isset($filter['status']) && $filter['status'] > 0) {
             $this->db->where('p.status', $filter['status']);
         }
 
         if (!empty($filter['tahun_anggaran'])) {
             $this->db->where('o.tahun_anggaran', $filter['tahun_anggaran']);
+        }
+
+        if (!empty($filter['perubahan_ke'])) {
+            $this->db->where('p.perubahan_ke', $filter['perubahan_ke']);
         }
 
         if (!empty($filter['id_opd']) && $filter['id_opd'] > 0) {

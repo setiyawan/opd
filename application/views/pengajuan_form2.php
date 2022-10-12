@@ -98,7 +98,7 @@
                               <div class="form-gorup mb-3">
                                 <label class="col-form-label" for="basic-default-name">Program/ Kegiatan</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" required rows="2" name="program"><?= $this->Ternary->isset_value($pengajuan['program'])?></textarea>
+                                  <textarea class="form-control" required rows="2" name="program" style="white-space: pre-wrap;"><?= $this->Ternary->isset_value($pengajuan['program'])?></textarea>
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
