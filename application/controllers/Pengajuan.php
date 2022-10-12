@@ -108,7 +108,7 @@ class Pengajuan extends My_Controller {
 
 		$this->set_alert('success', 'Data Pengajuan Berhasil Ditambah');
 
-		redirect(base_url().'pengajuan/edit?id='.$pengajuan['id_pengajuan_opd']);
+		redirect(base_url().'pengajuan/?id='.$pengajuan['id_pengajuan_opd']);
 	}
 
 	public function update() {
