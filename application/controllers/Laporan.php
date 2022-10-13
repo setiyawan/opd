@@ -50,7 +50,9 @@ class Laporan extends My_Controller {
 		$filter['status'] = $post['status'];
 
     	$data = array(
-    		'laporan' => $this->PengajuanModel->get_pengajuan_opd($filter)
+    		'laporan' => $this->PengajuanModel->get_pengajuan_opd($filter),
+    		'perubahan_ke' => $this->PengajuanConstant->perubahan_ke()[$post['perubahan_ke']],
+    		'tahun_anggaran' => $post['tahun_anggaran']
     	);
 
 		$this->load->view('cetak', $data);

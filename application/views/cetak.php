@@ -77,7 +77,7 @@
         <div class="test-results-header">
           <h3>
               REKAPITULASI USULAN KEGIATAN DAN BELANJA OPD <br>
-              PADA PDAK APBD 2022
+              PADA <?= strtoupper($perubahan_ke) ?> APBD <?= $tahun_anggaran ?>
           </h3>
           <button class="test-results-header" onclick="window.print()"> <i class="menu-icon tf-icons bx bx-printer"></i>cetak</button>
         </div>
@@ -130,7 +130,7 @@
                         <?= $value['program']?> 
                     </td>
                     <td class="test-result-step-description-cell">
-                        <?= $this->PengajuanConstant->sumber_dana()[$value['sumber_dana']] ?> 
+                        <?= $value['sumber_dana'] ?> 
                     </td>
                     <td class="test-result-step-description-cell">
                         <?= $this->Converter->to_rupiah($value['anggaran_apbd']) ?> 

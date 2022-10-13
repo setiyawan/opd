@@ -55,8 +55,8 @@
                         <th style="color: white;">Th. Anggaran</th>
                         <th style="color: white;">Fase</th>
                         <th style="color: white;">Tgl Surat</th>
-                        <th style="color: white;">APBD</th>
-                        <th style="color: white;">RAPBD</th>
+                        <th style="color: white;">Anggaran APBD</th>
+                        <th style="color: white;">Perubahan APBD</th>
                         <th style="color: white;">ACC</th>
                         <th style="color: white;">Status</th>
                         <th style="color: white;">Aksi</th>

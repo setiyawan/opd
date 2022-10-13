@@ -62,8 +62,21 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="<?= base_url()?>/asset/js/config.js"></script>
-  </head>
 
+    <style type="text/css">
+      body {
+        background-image: url(<?= base_url()?>/asset/images/bkad.jpg);
+        /*background-position-y: -120px;*/
+        /*background-repeat: no-repeat;*/
+        background-size: cover;
+        }
+    </style>
+  </head>
+  <?php
+    if(isset($_SESSION['alert'])) {
+        $alert = $this->session->flashdata('alert');
+    }
+  ?>
   <body>
     <!-- Content -->
 
@@ -76,13 +89,16 @@
               <!-- Logo -->
               <div class="app-brand justify-content-center">
                 <a class="app-brand-link gap-2">
-                  <h2 class="app-brand-text text-body fw-bolder">SI RATU</h1>
+                  <!-- <h2 class="app-brand-text text-body fw-bolder">SI RATU</h1> -->
                 </a>
               </div>
               <!-- /Logo -->
-              <h5 class="mb-2">Sistem Informasi Rekapitulasi Usulan Kegiatan / Belanja OPD</h5>
-              <p class="mb-4">Bidang Anggaran BPKAD Kab. Madiun</p>
-
+              <!-- <h5 class="mb-2">Sistem Informasi Rekapitulasi Usulan Kegiatan / Belanja OPD</h5>
+              <p class="mb-4">Bidang Anggaran BPKAD Kab. Madiun</p> -->
+              <div class="alert alert-<?=$alert['type']?> alert-dismissible" <?= isset($alert['message']) ? "" : "hidden" ?> role="alert">
+                <?= $alert['message'] ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
               <form id="formAuthentication" class="mb-3" action="<?= base_url()?>user/do_update_password" method="POST">
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">

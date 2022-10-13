@@ -98,11 +98,11 @@
                               <div class="form-gorup mb-3">
                                 <label class="col-form-label" for="basic-default-name">Program/ Kegiatan</label>
                                 <div class="col-sm-10">
-                                  <textarea class="form-control" required rows="2" name="program" style="white-space: pre-wrap;"><?= $this->Ternary->isset_value($pengajuan['program'])?></textarea>
+                                  <textarea class="form-control" required rows="3" name="program" style="white-space: pre-wrap;"><?= $this->Ternary->isset_value($pengajuan['program'])?></textarea>
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
-                                <label class="col-form-label" for="basic-default-name">Keterangan Surat</label>
+                                <label class="col-form-label" for="basic-default-name">Alasan Pergeseran / Perubahan</label>
                                 <div class="col-sm-10">
                                   <textarea class="form-control" required rows="4" name="keterangan_surat"><?= $this->Ternary->isset_value($pengajuan['keterangan_surat'])?></textarea>
                                 </div>
@@ -132,27 +132,23 @@
                               <div class="form-gorup mb-3">
                                 <label class="col-form-label" for="basic-default-name">Dasar Hukum</label>
                                 <div class="col-sm-10">
-                                  <input type="text" name="dasar_hukum" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['dasar_hukum'])?>" required>
+                                  <textarea class="form-control" rows="3" name="dasar_hukum"><?= $this->Ternary->isset_value($pengajuan['dasar_hukum'])?></textarea>
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
                                 <label class="col-form-label" for="basic-default-name">Sumber Dana</label>
                                 <div class="col-sm-10">
-                                  <select name="sumber_dana" class="form-control">
-                                    <?php foreach ($this->PengajuanConstant->sumber_dana() as $key => $value) { ?>
-                                      <option value="<?=$key?>" <?= $this->Ternary->istrue_value($pengajuan['sumber_dana'] == $key, 'selected')?> > <?=$value?> </option>
-                                    <?php } ?>
-                                  </select>
+                                  <textarea class="form-control" rows="3" name="sumber_dana"><?= $this->Ternary->isset_value($pengajuan['sumber_dana'])?></textarea>
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
-                                <label class="col-form-label" for="basic-default-name">Nominal APBD</label>
+                                <label class="col-form-label" for="basic-default-name">Anggaran APBD</label>
                                 <div class="col-sm-10">
                                   <input type="number" name="anggaran_apbd" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['anggaran_apbd'])?>" required>
                                 </div>
                               </div>
                               <div class="form-gorup mb-3">
-                                <label class="col-form-label" for="basic-default-name">Nominal Usulan RAPBD</label>
+                                <label class="col-form-label" for="basic-default-name">Anggaran Pergeseran / Perubahan APBD</label>
                                 <div class="col-sm-10">
                                   <input type="number" name="anggaran_rapbd" class="form-control" value="<?= $this->Ternary->isset_value($pengajuan['anggaran_rapbd'])?>" required>
                                 </div>

@@ -2,9 +2,11 @@
 
 class PengajuanConstant extends CI_Model {
 	function get_tahun_anggaran() {
-		return array(
-			'2022' => '2022' 
-		);
+		for ($i = 2022; $i <= $this->TimeConstant->get_current_year(); $i++) { 
+			$data[$i] = $i;
+		}
+
+		return $data;
 	}
 
 	function perubahan_ke() {
