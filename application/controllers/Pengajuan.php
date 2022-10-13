@@ -36,6 +36,7 @@ class Pengajuan extends My_Controller {
     	$filter['id_opd'] = $this->get_session_by_id('id_opd');
 
     	$data['pengajuan'] = $this->PengajuanModel->get_pengajuan_opd($filter);
+    	$data['id_opd'] = $this->get_session_by_id('id_opd');
 		
 		$this->load->view('pengajuan2', $data);
 		unset($_SESSION['alert']);
@@ -44,7 +45,8 @@ class Pengajuan extends My_Controller {
 	public function tambah() {
 		$data = array(
 			'form_action' => 'add',
-			'class' => ''
+			'class' => '',
+			'id_opd' => $this->get_session_by_id('id_opd')
 		);
     	$filter2['id_opd'] = $this->get_session_by_id('id_opd');
 		$filter2['tahun_anggaran'] = $this->TimeConstant->get_current_year();

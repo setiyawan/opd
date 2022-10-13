@@ -35,6 +35,7 @@ class Opd extends My_Controller {
     	$filter['id_opd'] = $this->get_session_by_id('id_opd');
 
     	$data['opd'] = $this->OpdModel->get_opd($filter);
+    	$data['id_opd'] = $this->get_session_by_id('id_opd');
 		
 		$this->load->view('opd2', $data);
 		unset($_SESSION['alert']);
@@ -42,7 +43,8 @@ class Opd extends My_Controller {
 
 	public function tambah() {
 		$data = array(
-			'form_action' => 'add'
+			'form_action' => 'add',
+			'id_opd' => $this->get_session_by_id('id_opd')
 		);
 
 		$this->load->view('opd_form2', $data);
@@ -54,7 +56,8 @@ class Opd extends My_Controller {
 
     	$data = array(
 			'form_action' => 'update',
-			'opd' =>  $this->OpdModel->get_opd($filter)[0]
+			'opd' =>  $this->OpdModel->get_opd($filter)[0],
+			'id_opd' => $this->get_session_by_id('id_opd')
 		);
 
 		$this->load->view('opd_form2', $data);

@@ -43,7 +43,8 @@ class Dashboard extends My_Controller {
     	$data = array(
     		'jumlah_opd' => $this->DashboardModel->total_pengajuan_opd($filter1),
     		'jumlah_acc' => $this->DashboardModel->total_pengajuan_opd($filter2),
-    		'jumlah_blm_bahas' => $this->DashboardModel->total_pengajuan_opd($filter3)
+    		'jumlah_blm_bahas' => $this->DashboardModel->total_pengajuan_opd($filter3),
+    		'id_opd' => $this->get_session_by_id('id_opd')
     	);
 
 		$this->load->view('dashboard2', $data);

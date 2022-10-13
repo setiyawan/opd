@@ -24,7 +24,7 @@
               </a>
             </li>
 
-            <li class="menu-item <?= $slug == "opd" ? "active" : "" ?>">
+            <li class="menu-item <?= $slug == "opd" ? "active" : "" ?> <?= $id_opd > 0 ? "force-hidden" : "" ?>">
               <a href="<?=base_url()?>opd" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-group"></i>
                 <div data-i18n="Tables">Daftar OPD</div>
@@ -38,7 +38,7 @@
               </a>
             </li>
 
-            <li class="menu-item <?= $slug == "laporan" ? "active" : "" ?>">
+            <li class="menu-item <?= $slug == "laporan" ? "active" : "" ?> <?= $id_opd > 0 ? "force-hidden" : "" ?>">
               <a href="<?=base_url()?>laporan" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-printer"></i>
                 <div data-i18n="Tables">Cetak Laporan</div>

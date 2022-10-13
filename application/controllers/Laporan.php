@@ -34,7 +34,8 @@ class Laporan extends My_Controller {
 		$filter2['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 
     	$data = array(
-    		'opd' => $this->OpdModel->get_opd($filter2)
+    		'opd' => $this->OpdModel->get_opd($filter2),
+    		'id_opd' => $this->get_session_by_id('id_opd')
     	);
 
 		$this->load->view('laporan', $data);
@@ -49,7 +50,7 @@ class Laporan extends My_Controller {
 		$filter['status'] = $post['status'];
 
     	$data = array(
-    		'laporan' => $this->PengajuanModel->get_pengajuan_opd($filter),
+    		'laporan' => $this->PengajuanModel->get_pengajuan_opd($filter)
     	);
 
 		$this->load->view('cetak', $data);

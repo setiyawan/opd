@@ -7,7 +7,7 @@ class PengajuanModel extends CI_Model {
             $this->db->where('p.id_pengajuan_opd', $filter['id_pengajuan_opd']);
         }
 
-        if (isset($filter['status']) && $filter['status'] > 0) {
+        if (isset($filter['status']) && $filter['status'] != "") {
             $this->db->where('p.status', $filter['status']);
         }
 
