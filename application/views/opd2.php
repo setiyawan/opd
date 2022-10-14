@@ -39,7 +39,7 @@
                 </a>
               </h4>
 
-              <div class="alert alert-success alert-dismissible" <?= isset($alert['message']) ? "" : "hidden" ?> role="alert">
+              <div class="alert alert-primary alert-dismissible" <?= isset($alert['message']) ? "" : "hidden" ?> role="alert">
                 <?= $alert['message'] ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>

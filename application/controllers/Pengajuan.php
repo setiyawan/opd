@@ -108,7 +108,7 @@ class Pengajuan extends My_Controller {
 		$result = $this->PengajuanModel->add_data_pengajuan_opd($data);
 		$pengajuan['id_pengajuan_opd'] = $this->db->insert_id();
 
-		$this->set_alert('success', 'Data Pengajuan Berhasil Ditambah');
+		$this->set_alert('success', 'Data Usulan Belanja / Kegiatan Berhasil Ditambah');
 
 		redirect(base_url().'pengajuan/?id='.$pengajuan['id_pengajuan_opd']);
 	}
@@ -141,7 +141,7 @@ class Pengajuan extends My_Controller {
 
 		$this->PengajuanModel->update_data_pengajuan_opd($data, $id_pengajuan_opd);
 
-		$this->set_alert('success', 'Data Pengajuan Berhasil Diperbarui');
+		$this->set_alert('success', 'Data Usulan Belanja / Kegiatan Berhasil Diperbarui');
 
 		redirect(base_url().'pengajuan?id='.$id_pengajuan_opd);
 	}
