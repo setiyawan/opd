@@ -11,10 +11,6 @@ class PengajuanModel extends CI_Model {
             $this->db->where('p.status', $filter['status']);
         }
 
-        if (!empty($filter['tahun_anggaran'])) {
-            $this->db->where('o.tahun_anggaran', $filter['tahun_anggaran']);
-        }
-
         if (!empty($filter['perubahan_ke'])) {
             $this->db->where('p.perubahan_ke', $filter['perubahan_ke']);
         }
@@ -24,7 +20,7 @@ class PengajuanModel extends CI_Model {
         }
 
         if (!empty($filter['tahun_anggaran'])) {
-            $this->db->where('o.tahun_anggaran', $filter['tahun_anggaran']);
+            $this->db->where('p.tahun_anggaran', $filter['tahun_anggaran']);
         }
 
         $this->db->select('p.*, o.nama_skpd');

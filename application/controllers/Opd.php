@@ -31,7 +31,6 @@ class Opd extends My_Controller {
     
     public function index() {
     	$get = $this->input->get();
-    	$filter['tahun_anggaran'] = $this->TimeConstant->get_current_year();
     	$filter['id_opd'] = $this->get_session_by_id('id_opd');
 
     	$data['opd'] = $this->OpdModel->get_opd($filter);
@@ -71,6 +70,7 @@ class Opd extends My_Controller {
 		$data['status'] = $post['status'];
 		$data['namakepala'] = $post['namakepala'];
 		$data['pangkatkepala'] = $post['pangkatkepala'];
+		$data['active'] = 1;
 		$data['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 
 		$result = $this->OpdModel->add_data_opd($data);

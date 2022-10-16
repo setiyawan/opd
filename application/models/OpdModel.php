@@ -7,10 +7,6 @@ class OpdModel extends CI_Model {
             $this->db->where('id', $filter['id_opd']);
         }
 
-        if (!empty($filter['tahun_anggaran'])) {
-            $this->db->where('tahun_anggaran', $filter['tahun_anggaran']);
-        }
-
         return  $this->db->get('data_unit')->result_array();
         // print_r($this->db->last_query());  
         // die;

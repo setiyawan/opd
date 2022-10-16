@@ -67,6 +67,7 @@ class Pengajuan extends My_Controller {
     	$data = array(
 			'form_action' => 'update',
 			'class' => '',
+			'id_opd' => $this->get_session_by_id('id_opd'),
 			'pengajuan' =>  $this->PengajuanModel->get_pengajuan_opd($filter)[0]
 		);
 

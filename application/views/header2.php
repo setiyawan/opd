@@ -17,7 +17,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="<?= base_url()?>/asset/"
+  data-assets-path="<?= base_url()?>asset/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -43,23 +43,23 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="<?= base_url()?>/asset/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="<?= base_url()?>asset/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="<?= base_url()?>/asset/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="<?= base_url()?>/asset/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="<?= base_url()?>/asset/css/demo.css" />
+    <link rel="stylesheet" href="<?= base_url()?>asset/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="<?= base_url()?>asset/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="<?= base_url()?>asset/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="<?= base_url()?>/asset/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="<?= base_url()?>asset/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="<?= base_url()?>/asset/vendor/js/helpers.js"></script>
+    <script src="<?= base_url()?>asset/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="<?= base_url()?>/asset/js/config.js"></script>
+    <script src="<?= base_url()?>asset/js/config.js"></script>
   </head>
