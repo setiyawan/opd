@@ -5,7 +5,14 @@
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
-
+        <div class="buy-now">
+          <?php if ($perubahan_ke > 0) { ?>
+          <p class="btn btn-danger btn-buy-now"> <a class="tf-icons bx bx-timer"></a> <strong> <?= $this->PengajuanConstant->perubahan_ke()[$perubahan_ke] ?> </strong> : <a id="countdown"></a></p>
+          <?php } else { ?>
+            <p class="btn btn-danger btn-buy-now"> <strong>Tidak Ada Fase Perubahan Anggaran </strong></p>
+          <?php } ?>
+        </div>
+        
         <?php $this->view('left_navbar2'); ?>
         
         <!-- / Menu -->

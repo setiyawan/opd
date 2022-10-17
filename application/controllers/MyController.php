@@ -38,6 +38,7 @@ class My_Controller extends CI_Controller {
         $this->load->model('OpdModel');
         $this->load->model('PengajuanModel');
         $this->load->model('DashboardModel');
+        $this->load->model('SettingModel');
 
         ini_set('display_error','off');
         error_reporting(0);

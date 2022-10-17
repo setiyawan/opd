@@ -6,6 +6,14 @@
       <div class="layout-container">
         <!-- Menu -->
 
+        <div class="buy-now">
+          <?php if ($perubahan_ke > 0) { ?>
+          <p class="btn btn-danger btn-buy-now"> <a class="tf-icons bx bx-timer"></a> <strong> <?= $this->PengajuanConstant->perubahan_ke()[$perubahan_ke] ?> </strong> : <a id="countdown"></a></p>
+          <?php } else { ?>
+            <p class="btn btn-danger btn-buy-now"> <strong>Tidak Ada Fase Perubahan Anggaran </strong></p>
+          <?php } ?>
+        </div>
+
         <?php $this->view('left_navbar2'); ?>
 
         <!-- / Menu -->
@@ -123,7 +131,12 @@
                                 <label class="col-form-label" for="basic-default-company">Fase</label>
                                 <div class="col-sm-10">
                                   <select name="perubahan_ke" class="form-control">
-                                    <?php foreach ($this->PengajuanConstant->perubahan_ke() as $key => $value) { ?>
+                                    <?php 
+                                      foreach ($this->PengajuanConstant->perubahan_ke() as $key => $value) { 
+                                        if ($perubahan_ke != $key && $id_opd > 0) {
+                                          continue;
+                                        }
+                                    ?>
                                       <option value="<?=$key?>" <?= $this->Ternary->istrue_value($pengajuan['perubahan_ke'] == $key, 'selected')?> > <?=$value?> </option>
                                     <?php } ?>
                                   </select>

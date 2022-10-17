@@ -45,6 +45,13 @@
               </a>
             </li>
 
+            <li class="menu-item <?= $slug == "setting" ? "active" : "" ?> <?= $id_opd > 0 ? "force-hidden" : "" ?>">
+              <a href="<?=base_url()?>setting/opd" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Tables">Setting Usulan Belanja</div>
+              </a>
+            </li>
+
             <li class="menu-item">
               <a href="<?=base_url()?>user/ganti_password" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-lock"></i>

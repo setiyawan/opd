@@ -35,23 +35,29 @@ class Pengajuan extends My_Controller {
 		$filter['status'] = $get['status'];
     	$filter['id_opd'] = $this->get_session_by_id('id_opd');
 
-    	$data['pengajuan'] = $this->PengajuanModel->get_pengajuan_opd($filter);
-    	$data['id_opd'] = $this->get_session_by_id('id_opd');
+    	$data = array (
+    		'pengajuan' => $this->PengajuanModel->get_pengajuan_opd($filter),
+    		'id_opd' => $this->get_session_by_id('id_opd'),
+    		'perubahan_ke' => $this->get_session_by_id('perubahan_ke'),
+    		'tgl_selesai' => $this->get_session_by_id('tgl_selesai')
+    	);
 		
 		$this->load->view('pengajuan2', $data);
 		unset($_SESSION['alert']);
 	}
 
 	public function tambah() {
-		$data = array(
-			'form_action' => 'add',
-			'class' => '',
-			'id_opd' => $this->get_session_by_id('id_opd')
-		);
     	$filter2['id_opd'] = $this->get_session_by_id('id_opd');
 		$filter2['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 
-		$data['opd'] = $this->OpdModel->get_opd($filter2);
+		$data = array (
+			'form_action' => 'add',
+			'class' => '',
+			'id_opd' => $this->get_session_by_id('id_opd'),
+			'opd' => $this->OpdModel->get_opd($filter2),
+    		'perubahan_ke' => $this->get_session_by_id('perubahan_ke'),
+    		'tgl_selesai' => $this->get_session_by_id('tgl_selesai')
+		);
 
 		if ($filter2['id_opd'] > 0) {
 			$data['class'] = 'force-hidden';
@@ -68,7 +74,9 @@ class Pengajuan extends My_Controller {
 			'form_action' => 'update',
 			'class' => '',
 			'id_opd' => $this->get_session_by_id('id_opd'),
-			'pengajuan' =>  $this->PengajuanModel->get_pengajuan_opd($filter)[0]
+			'pengajuan' =>  $this->PengajuanModel->get_pengajuan_opd($filter)[0],
+    		'perubahan_ke' => $this->get_session_by_id('perubahan_ke'),
+    		'tgl_selesai' => $this->get_session_by_id('tgl_selesai')
 		);
 
     	$filter2['id_opd'] = $this->get_session_by_id('id_opd');

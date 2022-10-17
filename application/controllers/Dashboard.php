@@ -44,7 +44,9 @@ class Dashboard extends My_Controller {
     		'jumlah_opd' => $this->DashboardModel->total_pengajuan_opd($filter1),
     		'jumlah_acc' => $this->DashboardModel->total_pengajuan_opd($filter2),
     		'jumlah_blm_bahas' => $this->DashboardModel->total_pengajuan_opd($filter3),
-    		'id_opd' => $this->get_session_by_id('id_opd')
+    		'id_opd' => $this->get_session_by_id('id_opd'),
+    		'perubahan_ke' => $this->get_session_by_id('perubahan_ke'),
+    		'tgl_selesai' => $this->get_session_by_id('tgl_selesai')
     	);
 
 		$this->load->view('dashboard2', $data);

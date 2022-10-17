@@ -41,6 +41,8 @@ class User extends My_Controller {
 			'username'  => $data['username'], 
 			'full_name' => $data['full_name'], 
 			'id_opd' 	=> $data['id_opd'], 
+			'perubahan_ke' 	=> $data['perubahan_ke'], 
+			'tgl_selesai' 	=> $data['tgl_selesai'], 
 			'logged_in' => TRUE
 		);  
 
@@ -70,7 +72,21 @@ class User extends My_Controller {
 
 		$result = $this->UserModel->login($username , $password);
 		if (count($result) > 0) {
-			$this->set_session($result[0]);
+			$filter = array (
+				'tahun_anggaran' => $this->TimeConstant->get_current_year(),
+				'current_date'=> $this->TimeConstant->get_current_date()
+			);
+			$get_setting_opd = $this->SettingModel->get_setting_opd($filter);
+
+			$data = $result[0];
+			if (count($get_setting_opd) > 0) {
+				$data['perubahan_ke'] = $get_setting_opd[0]['perubahan_ke'];
+				$data['tgl_selesai'] = $get_setting_opd[0]['tgl_selesai'];
+			} else {
+				$data['perubahan_ke'] = 0;
+			}
+
+			$this->set_session($data);
 			unset($_SESSION['alert']);
 			
 			redirect(base_url().'dashboard');
