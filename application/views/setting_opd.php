@@ -6,14 +6,6 @@
       <div class="layout-container">
         <!-- Menu -->
 
-        <div class="buy-now">
-          <?php if ($perubahan_ke > 0) { ?>
-          <p class="btn btn-danger btn-buy-now"> <a class="tf-icons bx bx-timer"></a> <strong> <?= $this->PengajuanConstant->perubahan_ke()[$perubahan_ke] ?> </strong> : <a id="countdown"></a></p>
-          <?php } else { ?>
-            <p class="btn btn-danger btn-buy-now"> <strong>Tidak Ada Fase Perubahan Anggaran </strong></p>
-          <?php } ?>
-        </div>
-
         <?php $this->view('left_navbar2'); ?>
         
         <?php
@@ -21,7 +13,7 @@
               $alert = $this->session->flashdata('alert');
           }
         ?>
-
+        
         <!-- / Menu -->
 
         <!-- Layout container -->
@@ -41,15 +33,17 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"> Daftar Usulan Belanja / Kegiatan
-                <a href="<?=base_url()?>pengajuan/tambah" class="btn btn-primary btn-sm">
+              <h4 class="fw-bold py-3 mb-4"> Setting Data OPD
+                <a href="<?=base_url()?>setting/opdtambah" class="btn btn-primary btn-sm">
                   <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Tambah
                 </a>
               </h4>
+
               <div class="alert alert-primary alert-dismissible" <?= isset($alert['message']) ? "" : "hidden" ?> role="alert">
                 <?= $alert['message'] ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
+
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <br>
@@ -59,37 +53,29 @@
                     <thead class="bg-dark">
                       <tr>
                         <th style="color: white;">#</th>
-                        <th style="color: white;">Nama OPD</th>
-                        <th style="color: white;">Th. Anggaran</th>
+                        <th style="color: white;">Tahun Anggaran</th>
                         <th style="color: white;">Fase</th>
-                        <th style="color: white;">Tgl Surat</th>
-                        <th style="color: white;">Anggaran APBD</th>
-                        <th style="color: white;">Perubahan APBD</th>
-                        <th style="color: white;">ACC</th>
-                        <th style="color: white;">Status</th>
+                        <th style="color: white;">Tanggal Mulai</th>
+                        <th style="color: white;">Tanggal Selesai</th>
                         <th style="color: white;">Aksi</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                       <?php $row = 1; ?>
-                      <?php foreach ($pengajuan as $key => $value) { ?>
+                      <?php foreach ($setting_opd as $key => $value) { ?>
                       <tr>
                         <th scope="row"> <?= $row++; ?></th>
-                        <td> <?= $value['nama_skpd']?> </td>
-                        <td> <?= $value['tahun_anggaran'] ?> </td>
+                        <td> <?= $value['tahun_anggaran']?> </td>
                         <td> <?= $this->PengajuanConstant->perubahan_ke()[$value['perubahan_ke']] ?> </td>
-                        <td> <?= $this->Converter->to_indonesia_date($value['tgl_surat']) ?> </td>
-                        <td> <?= $this->Converter->to_rupiah($value['anggaran_apbd']) ?> </td>
-                        <td> <?= $this->Converter->to_rupiah($value['anggaran_rapbd']) ?> </td>
-                        <td> <?= $this->Converter->to_rupiah($value['anggaran_acc']) ?> </td>
-                        <td> <?= $this->PengajuanConstant->status_pengajuan()[$value['status']] ?> </td>
+                        <td> <?= $this->Converter->to_indonesia_date($value['tgl_mulai']) ?> </td>
+                        <td> <?= $this->Converter->to_indonesia_date($value['tgl_selesai']) ?> </td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="<?= base_url()?>pengajuan/edit?id=<?= $value['id_pengajuan_opd']?>"
+                              <a class="dropdown-item" href="<?= base_url()?>setting/opdedit?id=<?= $value['id']?>"
                                 ><i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
                               <!-- <a class="dropdown-item" href="javascript:void(0);"

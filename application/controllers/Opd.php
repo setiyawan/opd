@@ -71,7 +71,6 @@ class Opd extends My_Controller {
 		$data['namakepala'] = $post['namakepala'];
 		$data['pangkatkepala'] = $post['pangkatkepala'];
 		$data['active'] = 1;
-		$data['tahun_anggaran'] = $this->TimeConstant->get_current_year();
 
 		$result = $this->OpdModel->add_data_opd($data);
 		$opd['id_opd'] = $this->db->insert_id();
