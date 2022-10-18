@@ -42,7 +42,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"> Daftar Usulan Belanja / Kegiatan
-                <a href="<?=base_url()?>pengajuan/tambah" class="btn btn-primary btn-sm">
+                <a href="<?=base_url()?>pengajuan/tambah" class="btn btn-primary btn-sm <?= $perubahan_ke > 0 ? '' : 'force-hidden'?>">
                   <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Tambah
                 </a>
               </h4>
@@ -82,7 +82,7 @@
                         <td> <?= $this->Converter->to_rupiah($value['anggaran_apbd']) ?> </td>
                         <td> <?= $this->Converter->to_rupiah($value['anggaran_rapbd']) ?> </td>
                         <td> <?= $this->Converter->to_rupiah($value['anggaran_acc']) ?> </td>
-                        <td> <?= $this->PengajuanConstant->status_pengajuan()[$value['status']] ?> </td>
+                        <td> <span class="badge <?= $this->PengajuanConstant->warna_status_pengajuan()[$value['status']] ?>"><?= $this->PengajuanConstant->status_pengajuan()[$value['status']] ?></span> </td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
