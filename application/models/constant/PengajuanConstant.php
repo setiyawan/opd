@@ -209,6 +209,15 @@ class PengajuanConstant extends CI_Model {
 			'3' => 'Ditolak' 
 		);
 	}
+
+	function warna_status_pengajuan() {
+		return array(
+			'0' => 'bg-secondary' ,
+			'1' => 'bg-info' ,
+			'2' => 'bg-warning' ,
+			'3' => 'bg-danger' 
+		);
+	}
 }
 
 ?>

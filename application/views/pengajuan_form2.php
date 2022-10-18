@@ -130,7 +130,7 @@
                               <div class="form-gorup mb-3">
                                 <label class="col-form-label" for="basic-default-company">Fase</label>
                                 <div class="col-sm-10">
-                                  <select name="perubahan_ke" class="form-control">
+                                  <select name="perubahan_ke" class="form-control" required>
                                     <?php 
                                       foreach ($this->PengajuanConstant->perubahan_ke() as $key => $value) { 
                                         if ($perubahan_ke != $key && $id_opd > 0) {
