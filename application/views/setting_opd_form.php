@@ -27,7 +27,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4">Setting Data OPD</h4>
+              <h4 class="fw-bold py-3 mb-4">Setting Usulan Belanja</h4>
 
               <!-- Basic Layout & Basic with Icons -->
               <div class="row">

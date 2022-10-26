@@ -73,7 +73,7 @@ class Setting extends My_Controller {
 		$result = $this->SettingModel->add_data_setting_opd($data);
 		$opd['id'] = $this->db->insert_id();
 
-		$this->set_alert('success', 'Data Setting Opd Berhasil Ditambah');
+		$this->set_alert('success', 'Data Setting Usulan Belanja Berhasil Ditambah');
 
 		redirect(base_url().'setting/opd?id='.$opd['id']);
 	}
@@ -90,7 +90,7 @@ class Setting extends My_Controller {
 
 		$this->SettingModel->update_data_setting_opd($data, $id);
 
-		$this->set_alert('success', 'Data Setting Opd Berhasil Diperbarui');
+		$this->set_alert('success', 'Data Setting Usulan Belanja Berhasil Diperbarui');
 
 		redirect(base_url().'setting/opd/?id='.$id);
 	}
