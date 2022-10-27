@@ -33,7 +33,7 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"> Setting Data OPD
+              <h4 class="fw-bold py-3 mb-4"> Setting Usulan Belanja
                 <a href="<?=base_url()?>setting/opdtambah" class="btn btn-primary btn-sm">
                   <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Tambah
                 </a>
